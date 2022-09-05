@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta author="Erick Kuwahara">
+    <title>Weather App</title>
+
+    <!-- ICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./images/favicon/site.webmanifest">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <!-- PRE LOADER -->
+    <div id="layer">
+        <div class="rays"></div>
+    </div>
+
+    <!-- MAIN -->
+    <main>
+        <div class="container">
+            <div class="box__weather">
+                <div class="weather__top">
+                    <div id="location"></div>
+                    <div id="date"></div>
+                </div>
+                <div class="weather__image">
+                    <img id="weatherIcon" src="" alt="weather icon">
+                    <span id="weatherName"></span>
+                </div>
+                <div class="weather__days">
+                    <div class="days__single"></div>        
+                </div>
+                <div class="weather__data">
+                    <div class="day__data">
+                        <div class="data__single">
+                            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <title>Wind speed</title>
+                                <path d="M9.59 4.59A2 2 0 1 1 11 8H2"></path>
+                                <path d="M12.59 19.41A2 2 0 1 0 14 16H2"></path>
+                                <path d="M17.73 7.73A2.5 2.5 0 1 1 19.5 12H2"></path>
+                            </svg>
+                            <span id="dataWind" translate="no"></span>
+                        </div>
+                        <div class="data__single">
+                            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <title>Humidity</title>
+                                <path d="m12 2.69 5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                            </svg>
+                            <span id="dataHumidity"></span>
+                        </div>
+                    </div>        
+                    <div class="day__weather">
+                        <span id="weather"></span>
+                    </div> 
+                </div>
+            </div>
+            <div class="box__search">
+                <input type="search" name="search" id="cityInput" placeholder="Enter the city name">
+                <span id="searchCity">
+                    <svg width="25" height="25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 3a8 8 0 1 0 0 16 8 8 0 1 0 0-16z"></path>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </span>
+            </div>
+
+            <p>Developed by <a href="https://github.com/ErickKS">Erick Kuwahara</a></p>
+        </div>
+    </main>
+
+    <!-- JS -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
