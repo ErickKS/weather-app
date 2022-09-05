@@ -6,13 +6,12 @@
     --color-secondary: hsl(240, 14%, 16%);
     --color-tertiary: hsl(0, 0%, 51%);
 
-    --border-color: hsl(300, 1%, 17%);
-
     --font-primary: hsl(0, 0%, 100%);   
 
     --family-sans: 'Open Sans', sans-serif;
 
     --border-radius: 1.6rem;
+    --border-color: hsl(300, 1%, 17%);
 }
 
 * {
@@ -25,6 +24,7 @@ html, body {
     height: 100%;
     background: var(--color-primary);
     background: linear-gradient(45deg, var(--color-secondary) 10%, var(--color-primary) 50%);
+    background-attachment: fixed;
     font-size: 1.6rem;
     font-family: var(--family-sans);
 }
@@ -57,7 +57,6 @@ main {
     justify-content: center;
     align-items: center;
     height: 100%;
-    margin-block: 3rem;
 }
 
 svg {
