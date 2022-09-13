@@ -20,8 +20,8 @@ date.innerText = today.getDate() + "/" + today.getMonth() + "/" + today.getFullY
 
 window.onload = () => {
     // PRE LOADER
-    const layer = document.getElementById('layer')
-    const body = document.querySelector('body')
+    const layer = document.getElementById('layer');
+    const body = document.querySelector('body');
 
     setTimeout(() => {
         body.style.overflowY = "visible"
@@ -41,60 +41,57 @@ window.onload = () => {
 
     fetch(apiUrl)
         .then(response => {
-            return response.json()
+            return response.json();
         })
         .then(body => {
             obj = body
             getDataCity();
-            return obj
         })
 }
 
 // DYNAMIC 
 
 function getCity() {
-    let city = cityInput.value;
+    const city = cityInput.value;
     const apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}&units=metric`;
 
     fetch(apiUrl)
         .then(response => {
-            return response.json()
+            return response.json();
         })
         .then(body => {
             obj = body
             getDataCity();
-            return obj
         })
 }
 
 function getDataCity() {
-    let cityData = obj;
-    let longitude = cityData[0].lon;
-    let latitude = cityData[0].lat;
+    const cityData = obj;
+    const longitude = cityData[0].lon;
+    const latitude = cityData[0].lat;
 
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
 
     fetch(apiUrl)
         .then(response => {
-            return response.json()
+            return response.json();
         })
         .then(body => {
             obj = body
             showDataCity();
-            return obj
         })
 }
 
 function showDataCity() {
-    let selectedCity = obj;
+    const selectedCity = obj;
 
-    let cityName = selectedCity.name;
-    let countryName = selectedCity.sys.country;
-    let temperature = Math.round(selectedCity.main.temp - 273) + "º";
-    let wind = selectedCity.wind.speed + " km/h";
-    let humidity = selectedCity.main.humidity + "%";
-    let icon = selectedCity.weather[0].icon
-    let name = selectedCity.weather[0].description
+    const cityName = selectedCity.name;
+    const countryName = selectedCity.sys.country;
+    const temperature = Math.round(selectedCity.main.temp - 273) + "º";
+    const wind = selectedCity.wind.speed + " km/h";
+    const humidity = selectedCity.main.humidity + "%";
+    const icon = selectedCity.weather[0].icon;
+    const name = selectedCity.weather[0].description;
 
     placeLocation.innerText = cityName + " | " + countryName;
     weather.innerText = temperature;
@@ -108,6 +105,6 @@ function showDataCity() {
 searchCity.addEventListener('click', getCity);
 cityInput.addEventListener('keypress', (event) => {
     if(event.key === 'Enter') {
-        getCity()
+        getCity();
     }
 })
