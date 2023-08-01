@@ -1,90 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta author="Erick Kuwahara">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <meta author="Erick Kuwahara" />
     <title>Weather App</title>
 
-    <!-- ICON -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./images/favicon/site.webmanifest">
-
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./images/favicon/site.webmanifest" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./style/style.css">
-</head>
+    <link rel="stylesheet" href="./style/main.css" />
+  </head>
 
-<body>
+  <body>
     <!-- PRE LOADER -->
     <div id="layer">
-        <div class="rays"></div>
+      <div class="rays"></div>
     </div>
 
-    <!-- MAIN -->
     <main>
-        <div class="container">
-            <div class="box__weather">
-                <div class="weather__top">
-                    <div id="location"></div>
-                    <div id="date"></div>
-                </div>
-                <div class="weather__image">
-                    <img id="weatherIcon" src="" alt="weather icon">
-                    <span id="weatherName"></span>
-                </div>
-                <div class="weather__days">
-                    <div class="days__single"></div>        
-                </div>
-                <div class="weather__data">
-                    <div class="day__data">
-                        <div class="data__single">
-                            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <title>Wind speed</title>
-                                <path d="M9.59 4.59A2 2 0 1 1 11 8H2"></path>
-                                <path d="M12.59 19.41A2 2 0 1 0 14 16H2"></path>
-                                <path d="M17.73 7.73A2.5 2.5 0 1 1 19.5 12H2"></path>
-                            </svg>
-                            <span id="dataWind" translate="no"></span>
-                        </div>
-                        <div class="data__single">
-                            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <title>Humidity</title>
-                                <path d="m12 2.69 5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-                            </svg>
-                            <span id="dataHumidity"></span>
-                        </div>
-                    </div>        
-                    <div class="day__weather">
-                        <span id="weather"></span>
-                    </div> 
-                </div>
-            </div>
-            <div class="box__search">
-                <input type="search" name="search" id="cityInput" placeholder="Enter the city name">
-                <span id="searchCity">
-                    <svg width="25" height="25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 3a8 8 0 1 0 0 16 8 8 0 1 0 0-16z"></path>
-                        <path d="m21 21-4.35-4.35"></path>
-                    </svg>
-                </span>
+      <div class="container">
+        <div class="box__weather">
+          <div class="weather__top">
+            <img id="weatherIcon" src="" alt="weather icon" />
+
+            <div id="date"></div>
+          </div>
+
+          <div class="weather__now">
+            <span id="weather"></span>
+            <span id="weatherName"></span>
+          </div>
+
+          <div class="line"></div>
+
+          <div class="weather__data">
+            <div class="data__single">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M25 12.5C25 20 15 27.5 15 27.5C15 27.5 5 20 5 12.5C5 9.84783 6.05357 7.3043 7.92893 5.42893C9.80429 3.55357 12.3478 2.5 15 2.5C17.6522 2.5 20.1957 3.55357 22.0711 5.42893C23.9464 7.3043 25 9.84783 25 12.5Z"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M15 16.25C17.0711 16.25 18.75 14.5711 18.75 12.5C18.75 10.4289 17.0711 8.75 15 8.75C12.9289 8.75 11.25 10.4289 11.25 12.5C11.25 14.5711 12.9289 16.25 15 16.25Z"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <span id="location"></span>
             </div>
 
-            <p>Developed by <a href="https://github.com/ErickKS" target="_blank">Erick Kuwahara</a></p>
+            <div class="data__single">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M22.125 9.62501C22.4909 9.27271 22.9371 9.0149 23.4251 8.87391C23.913 8.73292 24.428 8.71299 24.9254 8.81586C25.4228 8.91872 25.8876 9.14128 26.2797 9.46425C26.6717 9.78723 26.979 10.2009 27.1752 10.6694C27.3713 11.1379 27.4503 11.6472 27.4052 12.1531C27.3602 12.6591 27.1925 13.1464 26.9167 13.5729C26.641 13.9994 26.2653 14.3523 25.8225 14.601C25.3796 14.8496 24.8827 14.9866 24.375 15H2.5"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 5.75C12.2896 5.45463 12.648 5.23573 13.043 5.11294C13.438 4.99014 13.8573 4.96728 14.2633 5.0464C14.6693 5.12553 15.0494 5.30416 15.3694 5.5663C15.6894 5.82843 15.9393 6.16587 16.0968 6.54837C16.2543 6.93087 16.3144 7.34647 16.2718 7.75792C16.2292 8.16938 16.0851 8.56382 15.8525 8.9059C15.6199 9.24798 15.3061 9.52699 14.9392 9.71794C14.5722 9.9089 14.1636 10.0058 13.75 10H2.5"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M15.75 24.25C16.0396 24.5454 16.398 24.7643 16.793 24.8871C17.188 25.0099 17.6073 25.0327 18.0133 24.9536C18.4193 24.8745 18.7994 24.6958 19.1194 24.4337C19.4394 24.1716 19.6893 23.8341 19.8468 23.4516C20.0043 23.0691 20.0644 22.6535 20.0218 22.2421C19.9792 21.8306 19.8351 21.4362 19.6025 21.0941C19.3699 20.752 19.0561 20.473 18.6892 20.2821C18.3222 20.0911 17.9136 19.9942 17.5 20H2.5"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <span id="dataWind" translate="no"></span>
+            </div>
+
+            <div class="data__single">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8.75 20.375C11.5 20.375 13.75 18.0875 13.75 15.3125C13.75 13.8625 13.0375 12.4875 11.6125 11.325C10.1875 10.1625 9.1125 8.4375 8.75 6.625C8.3875 8.4375 7.325 10.175 5.8875 11.325C4.45 12.475 3.75 13.875 3.75 15.3125C3.75 18.0875 6 20.375 8.75 20.375Z"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M15.7 8.25002C16.5597 6.87643 17.1691 5.36133 17.5 3.77502C18.125 6.90002 20 9.90002 22.5 11.9C25 13.9 26.25 16.275 26.25 18.775C26.2571 20.5029 25.7511 22.194 24.796 23.6339C23.8409 25.0738 22.4798 26.1977 20.8852 26.8631C19.2905 27.5286 17.5343 27.7055 15.839 27.3716C14.1436 27.0377 12.5857 26.2079 11.3625 24.9875"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <span id="dataHumidity"></span>
+            </div>
+          </div>
         </div>
+
+        <div class="box__search">
+          <input type="text" name="search" id="cityInput" placeholder="Enter the city name" />
+
+          <span id="searchCity">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.16666 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16666C15.8333 5.48477 12.8486 2.5 9.16666 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16666C2.5 12.8486 5.48477 15.8333 9.16666 15.8333Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path d="M17.5 17.5L13.9167 13.9167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </div>
+      </div>
     </main>
 
     <!-- JS -->
     <script src="./js/main.js"></script>
-</body>
-
+  </body>
 </html>
