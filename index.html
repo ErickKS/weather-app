@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,6 +30,93 @@
     </div>
 
     <main>
+      <div class="blur">
+        <svg width="630" height="742" viewBox="0 0 630 742" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_f_1_145)">
+            <path
+              d="M254.624 371.435C235.969 318.217 293.867 264.544 325.148 244.36C334.817 237.64 340.504 254.594 367.804 322.823C395.103 391.051 367.804 371.435 335.954 458.426C304.104 545.417 277.942 437.958 254.624 371.435Z"
+              fill="#1C3F4F"
+            />
+            <path
+              d="M254.624 371.435C235.969 318.217 293.867 264.544 325.148 244.36C334.817 237.64 340.504 254.594 367.804 322.823C395.103 391.051 367.804 371.435 335.954 458.426C304.104 545.417 277.942 437.958 254.624 371.435Z"
+              stroke="black"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_1_145"
+              x="0.499512"
+              y="-7.50002"
+              width="629"
+              height="749"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="125" result="effect1_foregroundBlur_1_145" />
+            </filter>
+          </defs>
+        </svg>
+
+        <svg width="661" height="715" viewBox="0 0 661 715" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_f_1_84)">
+            <path
+              d="M255.501 361.309C232.329 315.602 304.249 269.504 343.106 252.168C355.116 246.396 362.181 260.958 396.092 319.557C430.003 378.157 396.092 361.309 356.529 436.023C316.966 510.737 284.467 418.444 255.501 361.309Z"
+              fill="#07B1FF"
+              fill-opacity="0.8"
+            />
+            <path
+              d="M255.501 361.309C232.329 315.602 304.249 269.504 343.106 252.168C355.116 246.396 362.181 260.958 396.092 319.557C430.003 378.157 396.092 361.309 356.529 436.023C316.966 510.737 284.467 418.444 255.501 361.309Z"
+              stroke="black"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_1_84"
+              x="0.497314"
+              y="0.499969"
+              width="660.003"
+              height="714"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="125" result="effect1_foregroundBlur_1_84" />
+            </filter>
+          </defs>
+        </svg>
+
+        <svg width="610" height="730" viewBox="0 0 610 730" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_f_1_172)">
+            <path
+              d="M244.624 369.435C225.969 316.217 283.867 262.544 315.148 242.36C324.817 235.64 330.504 252.594 357.804 320.823C385.103 389.051 357.804 369.435 325.954 456.426C294.104 543.417 267.942 435.958 244.624 369.435Z"
+              fill="#7E451F"
+            />
+            <path
+              d="M244.624 369.435C225.969 316.217 283.867 262.544 315.148 242.36C324.817 235.64 330.504 252.594 357.804 320.823C385.103 389.051 357.804 369.435 325.954 456.426C294.104 543.417 267.942 435.958 244.624 369.435Z"
+              stroke="black"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_1_172"
+              x="0.499512"
+              y="0.5"
+              width="609"
+              height="729"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="120" result="effect1_foregroundBlur_1_172" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+
       <div class="container">
         <div class="box__weather">
           <div class="weather__top">
@@ -119,9 +206,9 @@
         </div>
 
         <div class="box__search">
-          <input type="text" name="search" id="cityInput" placeholder="Enter the city name" />
+          <input type="text" name="search" id="cityInput" placeholder="Enter the city name" autocomplete="off" />
 
-          <span id="searchCity">
+          <button id="searchCity">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M9.16666 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16666C15.8333 5.48477 12.8486 2.5 9.16666 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16666C2.5 12.8486 5.48477 15.8333 9.16666 15.8333Z"
@@ -131,7 +218,7 @@
               />
               <path d="M17.5 17.5L13.9167 13.9167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-          </span>
+          </button>
         </div>
       </div>
     </main>

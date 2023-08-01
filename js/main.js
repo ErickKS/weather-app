@@ -14,10 +14,11 @@ const searchCity = document.getElementById("searchCity");
 
 const date = document.getElementById("date");
 const today = new Date();
-date.innerText = today.getDate() + "/" + today.getMonth();
+const dayFormatted = today.getDate().toString().padStart(2, "0");
+const mouthFormatted = today.getMonth().toString().padStart(2, "0");
+date.innerText = dayFormatted + "/" + mouthFormatted;
 
 // DEFAULT VALUES
-
 window.onload = () => {
   // PRE LOADER
   const layer = document.getElementById("layer");
@@ -32,7 +33,7 @@ window.onload = () => {
         layer.style.display = "none";
       }, 500);
     }
-  }, 1500);
+  }, 1000);
 
   // DEFAULT VALUES
 
@@ -100,6 +101,8 @@ function showDataCity() {
 
   weatherIcon.src = `./images/${icon}.png`;
   weatherName.innerText = name;
+
+  cityInput.value = "";
 }
 
 searchCity.addEventListener("click", getCity);

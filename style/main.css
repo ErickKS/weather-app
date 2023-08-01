@@ -5,12 +5,14 @@
   --color-secondary: hsl(225, 18%, 22%);
 
   --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 html,
@@ -35,6 +37,7 @@ body * {
 }
 
 main {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +64,7 @@ span {
 
   width: 100%;
   height: 100%;
-  background-color: var(--color-primary);
+  background-color: var(--black);
   transition: opacity 0.5s;
 }
 
@@ -101,6 +104,33 @@ span {
 }
 
 /* ============================================ */
+/* =================== BLUR =================== */
+/* ============================================ */
+
+.blur {
+  position: absolute;
+  inset: 0;
+}
+
+.blur svg {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.blur svg:nth-of-type(1) {
+  top: 31%;
+  left: 56%;
+}
+.blur svg:nth-of-type(2) {
+  top: 45%;
+  left: 55%;
+}
+.blur svg:nth-of-type(3) {
+  top: 39%;
+  left: 43%;
+}
+
+/* ============================================ */
 /* =================== MAIN =================== */
 /* ============================================ */
 
@@ -110,7 +140,8 @@ span {
   gap: 2.4rem;
 
   padding: 2rem 2.4rem;
-  background: var(--color-primary);
+  background: rgba(21, 24, 32, 0.4);
+  backdrop-filter: blur(0.2rem);
   border: 0.2rem solid var(--color-secondary);
   border-radius: 1.2rem;
   box-shadow: 0.2rem 0.5rem 1.5rem 0 var(--color-primary);
@@ -199,7 +230,8 @@ span {
 
   width: 100%;
   padding: 1.2rem 2.4rem;
-  background-color: var(--color-primary);
+  background: rgba(21, 24, 32, 0.4);
+  backdrop-filter: blur(0.2rem);
   border-radius: 1.2rem;
   border: 0.2rem solid var(--color-secondary);
   box-shadow: 0.2rem 0.5rem 1.5rem 0 var(--color-primary);
@@ -207,8 +239,13 @@ span {
 
   font-size: 1.6rem;
   color: var(--white);
+  text-transform: capitalize;
 
   transition: 0.2s ease-in;
+}
+
+.box__search input::placeholder {
+  text-transform: none;
 }
 
 .box__search input:focus,
@@ -216,27 +253,25 @@ span {
   border-color: #4d556e;
 }
 
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
-.box__search span {
+.box__search button {
   position: absolute;
   top: 1.4rem;
   right: 2.4rem;
-  cursor: pointer;
-}
 
-.box__search svg {
-  stroke: var(--white);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
   opacity: 0.5;
 
   transition: 0.2s ease-in-out;
 }
-
-.box__search svg ~ input:placeholder-shown {
+.box__search button:hover,
+.box__search button:focus,
+.box__search input:not(:placeholder-shown) + button {
   opacity: 1;
+}
+
+.box__search svg {
+  stroke: var(--white);
 }
