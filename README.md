@@ -11,7 +11,7 @@
 <br/>
 
 <h3 align="center">
-    <img src="./.github/readme-gif.gif" alt="project gif" height="400px">
+    <img src="./.github/readme-gif.gif" alt="project gif" height="400px"/>
     <br/>
     <h3 align="center">
         <strong>
@@ -23,8 +23,8 @@
 <br/><hr/>
 
 ## 📚 Project
-<p>I developed this project to practice my manipulation of data from an API.</p>
-<p>And also for me to get used to working with an API.</p>
+<p>My climate project provides comprehensive insights into a city's weather conditions, encompassing temperature, humidity, and wind speed data.</p>
+<p>This project was crafted with the purpose of enhancing my data manipulation skills through the analysis and utilization of an API's information.</p>
 
 <br/>
 
